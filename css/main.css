@@ -1,0 +1,9 @@
+#main{}
+.article{border-bottom: 1px solid #ff404c;padding: 1px;display: flex;justify-content: space-between;}
+.article .article-l{}
+.article .article-l .imgHot{margin: 0px 0 9px 14px;}
+.article .article-l .spanHot{font:700 24px/45px ""; margin: 29px 0 0 12px;color: #ff404c;}
+.article .article-l .imgHot2{margin-left: 20px;}
+.article .article-l .aHot{}
+.article .article-r{}
+.article .article-r a{font: 12px/26px "";color: #666;margin:48px 9px 0 9px;}

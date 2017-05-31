@@ -1,0 +1,41 @@
+.margin{width:1202px;margin:0 auto}
+
+#title{background:"#fafafa",height:"30px"}
+#title ul{float: right;}
+#title ul li{float:left;height: 30px;}
+#title ul li a{font-size:12px;padding: 0 15px;;border-right: 1px solid #e5e5e5;display: block;margin-top: 6px;color: #999;}
+#title ul li #denglu{color:#ec1611;}
+#title ul li a #imgPhone{margin-right: 9px;}
+#title ul li a #imgCart{margin-right: 5px;}
+#title ul li a #spanId{color: #cf201c;}
+#title ul li a:hover{color:#ec1611;}
+
+#search{}
+#search #search-l{float: left;margin-top: 28px;}
+#search #search-c{float: left;margin: 28px 0 0 31px;height: 35px;border: 2px solid #e60044;border-right: 0;}
+#search #search-c #imgSearch{height:35px;display: block;float: left;width: 113px;}
+#search #search-c #inputSearch{float: left;height: 35px;width: 385px;border: 0;}
+#search #search-c #imgSearch2{float: left;}
+#search #imgSearch3{float: left;margin: 28px 42px 0 0;}
+#search #search-r{float: left;margin-top: 28px;}
+
+#nav{}
+#nav ul{margin-top: 29px;}
+#nav ul li{float: left;height: 40px;}
+#nav ul #first{width: 167px;height: 40px;background: #e60044;text-align: center;font:16px/40px "";display: block;color:#fff;border: 0;padding: 0;}
+#nav ul li a{font:16px/38px "";color:#696969;padding:0 29px;display: block;}
+#nav ul a:hover{border-bottom: 2px solid #ec0000;box-shadow: 0px 0px 20px #e8e8e8;}
+#nav ul li #last{padding-right: 0;border: 0;box-shadow: 0px 0px 0px #e8e8e8;}
+
+#banner{border: 1px solid #e5e5e5;}
+#banner .banner-l{float: left;}
+#banner .banner-l ul{padding: 0 6px;}
+#banner .banner-l ul li{width: 157px;border-bottom: 1px solid #e0e0e0;text-align: center;}
+#banner .banner-l ul li a{font: 12px/29px "";color:#333;}
+#banner .banner-c{float: left;position: relative;width: 400px;height: 350px;border: 1px solid black;background-color: pink;}
+#banner #box{float: left;position: relative;width: 951px;height: 305px;background-color: pink;}
+#banner .banner-r{float: left;}
+#banner .banner-r a{display: block;text-align: center;}
+#banner .banner-r a i{width: 40px;height: 44px;display: block;background:url(../img/user_info_icon.png) no-repeat;margin:17px 0 0 19px}
+#banner .banner-r a #banner-r-c{background-position: left 0px top -48px;}
+#banner .banner-r a span{display: block;color: #ff404c;font:14px/32px "";}
