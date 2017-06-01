@@ -17,7 +17,7 @@
 					<img src="img/hot_brand.png" class="hotImg"/>
 					<h3>品牌热卖</h3>
 					<img src="img/tu1.png" class="hotImg2"/>
-					<h4>今日在线品牌<span>1428</span>个</h4>
+					 <a href="#"><h4>今日在线品牌<span>1428</span>个</h4></a>
 				</div>
 				<div class="hot-r">
 					<a href="#">女装</a>
@@ -54,28 +54,72 @@
 				</ul>	
 			</div>
 			<div id="trademark">
+				<script type="text/javascript" src="js/trademark.js" ></script>
+			</div>
+			<div class="hot clear">
+				<div class="hot-l clear">
+					<img src="img/xianshi_title.png" class="hotImg"/>
+					
+					<img src="img/tu1.png" class="hotImg2"/>
+					<a href="#"><h4>精选爆款,限时限量</h4></a>
+				</div>
+				<div id="timeLimit">
+					<a href="#">08:00开抢</a>
+					<a href="#">10:00开抢</a>
+					<a href="#">12:00开抢</a>
+					<a href="#">14:00开抢</a>
+					<a href="#">16:00开抢</a>
+					<a href="#">20:00开抢</a>
+					<a href="#">明日预告</a>
+				</div>
+			</div>
+			<div id="slides">
 				
 			</div>
+			<div class="hot clear">
+				<div class="hot-l clear">
+					<img src="img/hot_sale.png" class="hotImg"/>
+					<h3>热销推荐</h3>
+					<img src="img/tu1.png" class="hotImg2"/>
+					<h4>
+						<a href="#">即将下架</a> <span>|</span>
+						<a href="#">人气爆款</a> <span>|</span>
+						<a href="#">每日更新</a>
+					</h4>
+				</div>
+			</div>
+			<div class="recommend">
+				<a href="#"><img src="img/232x159.30d6d2880f6a29c7efc50a9b2022b0ff.232x159.png"></a>
+				<a href="#"><img src="img/232x159.519c11f979d953fc35fcf55c9a0f09de.232x159.jpg"></a>
+				<a href="#"><img src="img/232x159.cd5209bba397a74d284ecc9dfc63a1ee.232x159.jpg"></a>
+				<a href="#"><img src="img/232x159.daf4727d8b13f776a1c9f733ae5fe32c.232x159.jpg"></a>
+				<a href="#"><img src="img/232x159.ed7702fd4266a65344b674c727eb6a29.232x159.jpg"></a>
+			</div>
+			<div class="hot clear">
+				<div class="hot-l clear">
+					<img src="img/today_icon.png" class="hotImg"/>
+					<h3>今日已更新</h3>
+					<img src="img/tu1.png" class="hotImg2"/>
+					<a href="#"><h4><span>24927</span>款</h4></a>
+				</div>
+				<div id="today">
+					<a href="#">默认</a> <span>|</span>
+					<a href="#">男</a> <span>|</span>
+					<a href="#">女</a>
+					<a href="#">辣妈</a>
+					<a href="#">排序</a>
+					<a href="#">最新</a>
+					<a href="#">最热</a>
+				</div>
+			</div>
+			
 		</section>
-		
+		<div id="todayUpDate">
+				<script type="text/javascript" src="js/todayUpdate.js" ></script>
+		</div>
 		<footer> </footer>
 	</body>
 </html>
 <script>
-	$("#header").load("header.html")
-</script>
-<script>
-	var trademark = document.getElementById("trademark")
-	for (var i=0;i<20;i++) {
-		var img =  document.createElement("img")
-		var a =  document.createElement("a")
-		a.appendChild(img)
-		a.href="#"
-		img.src="img/t"+(i+1)+".jpg"
-		img.onmouseover=function(event){
-			var e=event||window.event;
-			
-		}
-		trademark.appendChild(a)
-	}
+	$("#header").load("header.html")	
 </script>
