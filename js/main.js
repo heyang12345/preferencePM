@@ -1,5 +1,0 @@
-
-require(["slideshow"],function(header){
-	
-	
-});

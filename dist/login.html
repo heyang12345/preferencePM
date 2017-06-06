@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/login.css" />
+		<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<header class="clear">
+			<div class="margin">
+				<img src="img/loginLogo.png"/>
+				<div class="header-r">
+					<img src="img/loginT.png"/>
+					<span>通行证帮助中心</span>
+				</div>
+			</div>
+		</header>
+		<section class="clear margin">
+			<div class="section-l">
+				<img src="img/login-l.png"/>
+			</div>
+			<ul class="section-r">
+				<li>用户登录:</li>
+				<li>账号: <input type="text"  id="userName"/></li><br/><span id="userMsg"></span>
+				<li>密码: <input type="password" id="userPass"/></li><br/><span id="passMsg"></span>
+				<li>验证码 <input type="text" id="txt2"/><span>2gxy</span></li>
+				<li class="clear"><input type="checkbox"/ id="che"><span id="spanC">记住登录状态</span><a href="#" id="cheA">忘记密码？</a></li>
+				<li><input type="button" value="登录" id="subBtn"/></li>
+				<li id="loginImg"><span>你也可以用以下方式登录:</span><br/>
+					<a href="#"><img src="img/weibo.png"/></a>
+					<a href="#"><img src="img/qqlogin.png"/><br/></a>
+					<a href="#"><img src="img/taobo.png"/></a>
+					<a href="#"><img src="img/renrenlogin.png"/></a>	
+				</li>
+				<li><span>还没开通账号？ <a href="register.html" id="regisA">立即注册</a></span></li>
+			</ul>
+		</section>
+		<footer>
+			<span>Copyrignt@2010-2017版权所有TUAN800.COM</span><br/>
+			<span>京ICP证120075号 | 京ICP备 10051110号 | 京公网备案 11 C105014520</span>
+		</footer>
+	</body>
+</html>
+<script type="text/javascript">
+$(function(){
+	
+	$("#subBtn").click(function(){
+		$.post("login.php",{user:$("#userName").val(),userPass:$("#userPass").val()},function(data){
+			if(data=="true"){
+				//登录成功
+				//存cookie
+				saveCookie("userTel",$("#userName").val(),7)
+				saveCookie("userPass",$("#userPass").val(),7)
+				//跳到主页
+			 	location.href="homepage.html";
+			}else{
+				//登录失败
+				alert("亲，登录失败，用户名或者密码错了");
+			}
+		});		
+	});
+	
+});
+$("#subBtn").attr("disabled", true);
+$("#userMsg").css({margin:"-15px 1px 1px 57px",color:"#e56067",})
+$("#userName").blur(function(){
+		var reg = /^1\d{10}$/g;
+		var userName=$("#userName").val()
+		if(reg.test(userName)==false){
+			$("#userMsg").css({display:"block"})
+			$("#userMsg").html("输入格式有误，请重新输入")
+		}else{
+			$("#subBtn").attr("disabled", false);
+		}	
+	})
+	$("#userName").focus(function(){
+		$("#userMsg").css({display:"none"})
+	})
+
+
+
+
+function saveCookie(key,value,dayCount){
+	var d = new Date();
+	d.setDate(d.getDate()+dayCount);
+	document.cookie = key+"="+encodeURIComponent(value)+";expires="+d.toGMTString();
+	var aa =  getCookie("userTel")
+	//alert(aa)
+	var bb =  getCookie("userPass")
+	//alert(bb)
+}
+function getCookie(key){
+	
+	var str = decodeURIComponent(document.cookie);
+	
+	var arr = str.split("; ");
+
+	for(var i=0;i<arr.length;i++){
+		if(arr[i].indexOf(key+"=")==0){
+			return arr[i].substring((key+"=").length);
+		}
+	}
+	return "";
+}
+ removeCookie("userTel")
+ 
+function removeCookie(key){
+	
+	saveCookie(key,"007",-5);	
+}
+
+</script>

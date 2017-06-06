@@ -1,0 +1,101 @@
+#footer ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px; }
+
+#footer ul li {
+  float: left; }
+
+#footer ul li h3 {
+  font-size: 16px;
+  color: #333;
+  line-height: 29px; }
+
+#footer ul li a {
+  display: block;
+  font-size: 12px;
+  line-height: 26px;
+  color: #999; }
+
+#footer ul li span {
+  display: block;
+  font-size: 12px;
+  line-height: 26px;
+  color: #999; }
+
+#footer ul li span .zhe {
+  display: inline-block; }
+
+#footer ul li .divZhe {
+  width: 148px;
+  height: 25px;
+  border: 1px solid #eaeaea; }
+
+#footer ul li .divZhe input {
+  border: 0;
+  width: 106px;
+  height: 24px;
+  float: left;
+  text-align: center; }
+
+#footer ul li .zhe1 {
+  display: inline-block;
+  float: left;
+  border-left: 1px solid #eaeaea; }
+
+#footer ul li h4 {
+  font: 14px/40px "";
+  color: #666; }
+
+#roll {
+  width: 736px;
+  height: 16px;
+  margin-top: 20px; }
+
+#roll #roll-l {
+  float: left;
+  position: relative; }
+
+#roll #roll-l #roll-l-t a {
+  font-size: 12px;
+  color: #999;
+  margin: 0px 5px 10px;
+  float: left; }
+
+#roll #roll-l #roll-l-b a {
+  font-size: 12px;
+  color: #999;
+  margin: 0px 5px  10px;
+  float: left; }
+
+#roll span {
+  float: left;
+  font-size: 12px;
+  color: #999; }
+
+#roll a {
+  float: right; }
+
+#beian {
+  margin-top: 20px;
+  text-align: center; }
+
+#beian span {
+  font-size: 12px;
+  color: #999; }
+
+#beian a {
+  font-size: 12px;
+  color: #999; }
+
+#chu {
+  margin-top: 10px;
+  text-align: center; }
+
+#chu span {
+  font-size: 12px;
+  color: #999; }
+
+#xin {
+  text-align: center;
+  margin-top: 16px; }

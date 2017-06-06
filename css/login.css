@@ -1,0 +1,101 @@
+.margin {
+  width: 982px;
+  margin: 0 auto; }
+
+header {
+  background: #1d8a98;
+  height: 50px; }
+
+header img {
+  float: left;
+  margin-top: 5px; }
+
+header .header-r {
+  float: right;
+  margin-top: 20px; }
+
+header .header-r img {
+  margin: -2px 4px 0 0; }
+
+section {
+  background: #e9e9e9; }
+
+section .section-l {
+  float: left; }
+
+section .section-r {
+  float: left;
+  box-sizing: border-box;
+  padding-left: 34px; }
+
+section .section-r li {
+  font-size: 14px;
+  color: #666; }
+
+section .section-r li:nth-of-type(1) {
+  font: 18px/72px "";
+  color: #333; }
+
+section .section-r li:nth-of-type(2) {
+  height: 36px;
+  margin-bottom: 13px; }
+
+section .section-r li:nth-of-type(3) {
+  height: 36px;
+  margin-bottom: 13px; }
+
+section .section-r li:nth-of-type(4) {
+  height: 36px;
+  margin-bottom: 13px; }
+
+section .section-r li:nth-of-type(5) {
+  margin-bottom: 13px; }
+
+section .section-r li:nth-of-type(6) {
+  margin-bottom: 13px; }
+
+section .section-r li:nth-of-type(7) {
+  margin-bottom: 13px; }
+
+#userName {
+  width: 229px;
+  height: 36px; }
+
+#userPass {
+  width: 229px;
+  height: 36px; }
+
+#txt2 {
+  width: 108px;
+  height: 36px; }
+
+#che {
+  float: left; }
+
+#spanC {
+  float: left; }
+
+#cheA {
+  float: right;
+  color: #007e8c; }
+
+#subBtn {
+  width: 74px;
+  height: 35px;
+  background: #fa7e18;
+  border: 0;
+  border-radius: 4px; }
+
+#loginImg img {
+  margin: 10px 10px 0 0; }
+
+#regisA {
+  color: #007e8c; }
+
+footer {
+  text-align: center;
+  margin-top: 22px; }
+
+footer span {
+  font: 10px/18px "";
+  color: #999; }

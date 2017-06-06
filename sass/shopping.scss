@@ -1,0 +1,54 @@
+@charset "utf-8";
+@charset "utf-8";
+$fontSize:16px;
+$fontSize2:12px;
+$fontColor:#999;
+$fontColor2:#333;
+.margin{width:986px;margin:0 auto;}
+
+#title{background:"#fafafa";height:"30px"}
+#title ul{float: right;}
+#title ul li{float:left;height: 30px;}
+#title ul li a{font-size:12px;padding: 0 15px;;border-right: 1px solid #e5e5e5;display: block;margin-top: 6px;color: #999;}
+#title ul li #denglu{color:#ec1611;}
+#title ul li a #imgPhone{margin-right: 9px;}
+#title ul li a #imgCart{margin-right: 5px;}
+#title ul li a #spanId{color: #cf201c;}
+#title ul li a:hover{color:#ec1611;}
+
+#logo{display: flex;justify-content: space-between;}
+#logo img{width: 215px;height: 44px;margin-top: 32px;}
+#logo .logo-r{margin-top: 48px;}
+#logo a{width: 90px;height: 18px;display: inline-block;} 
+#logo a:nth-of-type(1){background: url(../img/step.ff09f3d1.png);background-position: 0 0px;} 
+#logo a:nth-of-type(2){background: url(../img/step.ff09f3d1.png);background-position: 194px 37px;} 
+#logo a:nth-of-type(3){background: url(../img/step.ff09f3d1.png);background-position: -139 1px;} 
+#hint{display: flex;justify-content: space-between;}
+#hint span{font: 18px/53px ""; margin-top: 21px;}
+#hint img{display: block;width: 486px;height: 28px;margin-top: 34px;}
+#divhr{height: 2px;width: 100000px;background: #ec1611;}
+#content{}
+#inside{width: 462px;height: 111px;margin: 98px 0 0 291px;}
+#content-l{background: url(../img/icon7.056f9fb8.png) no-repeat;width: 70px;height: 111px;float: left;background-position: 1px 2px;}
+#content-c{float:left;font:700 18px/30px "";color: #4d4735;box-sizing: border-box;padding: 7px 0 0 23px;}
+#content-c a{color: #ee3c3c;font-weight: bold;}
+#content-r {
+  background: url(../img/icon7.056f9fb8.png) no-repeat;
+  width: 135px;
+  height: 111px;
+  float: right;
+  background-position: left -67px top 44px; }
+
+#need{margin-top: 159px;}
+#need h3{font: 14px/42px "";color: #333;} 
+
+footer{text-align: center;}
+#beian{margin-top: 20px;text-align: center;}
+#beian span{font-size:$fontSize2 ;color: $fontColor;}
+#beian a{font-size:$fontSize2 ;color: $fontColor;}
+
+#chu{margin-top: 10px;text-align: center;}
+#chu span{font-size:$fontSize2 ;color: $fontColor;}
+
+#xin{text-align: center;margin-top: 16px;}
+

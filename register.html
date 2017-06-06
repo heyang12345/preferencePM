@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<link rel="stylesheet" href="css/register.css" />
+	<link rel="stylesheet" href="css/public.css" />
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	</head>
+	<body>
+		<header class="margin clear">
+			<img src="img/registerLogo.png">
+			<span>已有团800或折800账号了？<a href="#">云登录</a> <a href="homepage.html">返回主页</a></span>
+		</header>
+		<section id="subject" class="margin clear">
+			<div class="subject-l">
+				<form action="register.php" method="post">
+					<ul>
+						<li>手机号: <input type="tel" placeholder="手机号" id="tel" name="userTel"/><br/><span id="spanTel"></span></li>
+						<li>密码: <input type="password" id="password" name="userPass"/></li>
+						<li>确认密码: <input type="password" id="password2"/></li>
+						<li><div>请按住滑块，拖动到最右边<div></li>
+						<li>验证码: <input type="text" id="txt"/><a href="#"><span id="codeId">免费获取手机验证码</span></a></li>
+						<li><input type="checkbox" id="che"/><span>我已阅读并接受折800的<<用户服务协议>></span></li>
+						<li><input type="submit" value="同意协议并注册" id="sub"/></li>
+					</ul>
+				</form>
+			</div>
+			<div class="subject-r">
+				<img src="img/signupad.png" id="si"/>
+				<img src="img/haha.png" id="haha"/>
+				<div class="subject-r-t">
+					<a href="#"><img src="img/qq.png" id="img1"/></a>
+					<a href="#"><img src="img/baidu.png" id="img2"/></a>
+					<a href="#"><img src="img/gengduo.png" id="img3"/></a>	
+				</div>	
+			</div>
+		</section>
+		<div class="margin">
+			<h3 id="beian">
+			<a href="#">京ICP证120075</a>
+			<span>京ICP备10051110号-5</span>
+			<a href="#">京公网备11010502025623</a>
+			<span>统一社会信用代码91110105571298269B</span>
+			<span>食品流通许可证SP1101051510352397</span>
+		</h3>
+		<div id="xin" >
+			<a href="#"><img src="img/shang1.png"></a>
+			<a href="#"><img src="img/shang2.png"></a>
+			<a href="#"><img src="img/shang3.png"></a>
+		</div>
+		</div>
+	</body>
+</html>
+<script>
+	$("input").css({width:"297px",height:"37px",})
+	$("#txt").css({width:"127px",height:"37px",})
+	$("#che").css({width:"12px",height:"12px",})
+	$("#sub").css({width:"180px",height:"37px",backgroundColor:"#ff3b37",color:"#fff",})
+	$("#spanTel").css({margin:"57px",color:"#e56067",})
+	$("#sub").attr("disabled", true);
+	
+	$("#tel").blur(function(){
+		var reg = /^1\d{10}$/g;
+		var tel = $("#tel").val()
+		if(reg.test(tel)==false){
+			$("#spanTel").css({display:"inline"})
+			$("#spanTel").html("输入格式有误，请重新输入")
+		}else{
+			$("#sub").attr("disabled", false);
+		}	
+	})
+	$("#tel").focus(function(){
+		$("#spanTel").css({display:"none"})
+	})
+	
+</script>
+
