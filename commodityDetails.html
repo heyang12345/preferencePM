@@ -18,7 +18,7 @@
 				<li><a href="#"><img src="img/mobile_icon_new.png" id="imgPhone" />QQ登录</a></li>
 				<li><a href="#" id="denglu">登录 免费注册</a></li>
 				<li><a href="#">我的订单</a></li>
-				<li><a href="#"><img src="img/head_cart.png" id="imgCart"/>购物车<span id="spanId">0</span></a></li>
+				<li><a href="shopping.html"><img src="img/head_cart.png" id="imgCart"/>购物车<span id="spanId">0</span></a></li>
 				<li><a href="#">帮助中心</a></li>
 				<li><a href="#">卖家中心</a></li>
 			</ul>
@@ -38,7 +38,7 @@
 	</div>
 	<div id="nav" class="margin clear">
 		<ul class="clear">
-			<li><a id="first">首页</a></li>
+			<li><a id="first" href="homepage.html">首页</a></li>
 			<li><a>品牌团</a></li>
 			<li><a>优品汇</a></li>
 			<li><a>淘宝精选</a></li>
@@ -145,5 +145,28 @@
 	$("footer").load("footer.html")
 </script>
 <script>
+	//是否登录
+	$(function(){
+		var aa =  getCookie("userTel")
+		if(aa != ""){
+			$("#denglu").html("亲欢迎再次光临!")
+			$("#denglu2").html(aa)
+			
+			
+		}
+	})
+	//取cookie值
+	function getCookie(key){
 	
+	var str = decodeURIComponent(document.cookie);
+	
+	var arr = str.split("; ");
+
+	for(var i=0;i<arr.length;i++){
+		if(arr[i].indexOf(key+"=")==0){
+			return arr[i].substring((key+"=").length);
+		}
+		}
+		return "";
+	}
 </script>

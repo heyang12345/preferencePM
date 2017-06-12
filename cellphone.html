@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/cellphone.css" />
+		<script type="text/javascript" src="dist/js/jquery.js" ></script>
+	</head>
+	<body>
+		<div id="exclusive" class="margin">
+			<div class="exclusiveL margin clear">
+				<img src="img/zhe800.png">
+				<a href="#" id="first">Android</a>
+				<a href="#">iPhone</a>
+				<a href="#">iPad</a>
+				<a href="#">手机网页版</a>
+			</div>
+			<img src="img/p1_phone76108.png" id="shouji"/>
+			<img src="img/p1_zx.png" id="zhuanxiang">
+			<img src="img/p1_cloud.png" id="yun">
+		</div>
+	</body>
+</html>
+<script>
+	$("#exclusive").click( function () {  
+			$("#zhuanxiang").animate({ 
+			    left:"1400px",			   
+			  }, 1000 );
+			
+			$("#yun").animate({ 
+			    left:"-600px",			   
+			  }, 1000 );
+	})
+	$("#exclusive").dblclick( function () { 
+		$("#zhuanxiang").animate({ 
+			    left:"250px",			   
+			  }, 1000 );
+			
+			$("#yun").animate({ 
+			    left:"110px",			   
+			  }, 1000 );
+	})
+</script>

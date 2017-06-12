@@ -7,12 +7,12 @@
 		<div class="title margin clear">
 			<ul class="clear">
 				<li><a href="#" id="ceshi">团800旗下网站</a></li>
-				<li><a href="#">手机版</a></li>
+				<li><a href="cellphone.html">手机版</a></li>
 				<li><a href="#"><img src="img/mobile_icon_new.png" id="imgPhone" />QQ登录</a></li>
 				<li><a href="login.html" id="denglu">登录 </a></li>
 				<li><a href="register.html" id="denglu2">免费注册</a></li>
-				<li><a href="#">我的订单</a></li>
-				<li><a href="#"><img src="img/head_cart.png" id="imgCart"/>购物车<span id="spanId">0</span></a></li>
+				<li id="tuichu">我的订单</li>
+				<li><a href="shopping.html"><img src="img/head_cart.png" id="imgCart"/>购物车<span id="spanId">0</span></a></li>
 				<li><a href="#">帮助中心</a></li>
 				<li><a href="#">卖家中心</a></li>
 			</ul>
@@ -145,11 +145,17 @@
 	}
 </script>
 <script>
+	var aa =  getCookie("userTel")
 	$(function(){
-		var aa =  getCookie("userTel")
+		
 		if(aa != ""){
 			$("#denglu").html("亲欢迎再次光临!")
 			$("#denglu2").html(aa)
+			$("#tuichu").html("退出登录")
+		}else{
+			$("#denglu").html("登录")
+			$("#denglu2").html("注册")
+			$("#tuichu").html("我的订单")
 		}
 	})
 	//取cookie值
@@ -165,6 +171,23 @@
 		}
 		}
 		return "";
+	}
+	$("#tuichu").click(
+		function(){
+		
+		removeCookie(aa)
+	
+	})
+	//删除cookie
+	function removeCookie(key){
+	
+		saveCookie(key,"007",-5);	
+	}
+	function saveCookie(key,value,dayCount){
+	var d = new Date();
+	d.setDate(d.getDate()+dayCount);
+	document.cookie = key+"="+encodeURIComponent(value)+";expires="+d.toGMTString();
+	
 	}
 	//轮播图
 	$(function(){

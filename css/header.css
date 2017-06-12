@@ -26,6 +26,14 @@
   border-right: 0;
   padding-right: 2px; }
 
+#title ul #tuichu {
+  font-size: 12px;
+  padding: 0 15px;
+  display: block;
+  margin-top: 6px;
+  color: #999;
+  height: 30px; }
+
 #title ul li #denglu2 {
   color: #ec1611;
   padding-left: 2px; }

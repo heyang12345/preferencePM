@@ -6,7 +6,7 @@
 	</head>
 	<link rel="stylesheet" href="css/public.css" />
 	<link rel="stylesheet" href="css/shopping.css" />
-
+	<script type="text/javascript" src="js/jquery.js" ></script>
 	<body>
 		<header>
 			<div id="title">
@@ -17,7 +17,7 @@
 						<li><a href="#"><img src="img/mobile_icon_new.png" id="imgPhone" />QQ登录</a></li>
 						<li><a href="#" id="denglu">登录 免费注册</a></li>
 						<li><a href="#">我的订单</a></li>
-						<li><a href="#"><img src="img/head_cart.png" id="imgCart"/>购物车<span id="spanId">0</span></a></li>
+						<li><a href="homepage.html">返回首页</a></li>
 						<li><a href="#">帮助中心</a></li>
 						<li><a href="#">卖家中心</a></li>
 					</ul>
@@ -52,6 +52,29 @@
 				</div>
 			</div>
 		</div>
+		<div id="commodity" class="margin ">
+			<div class="commodity-t">
+				<input type="checkbox" id="checkAll">
+				<span>全选</span>
+				<span>商品</span>
+				<span>单价(元)</span>
+				<span>数量</span>
+				<span>金额(元)</span>
+				<span>操作</span>
+			</div>
+			<div id="goodsche">
+				
+			</div>	
+			<div class="commodity-b">
+				<input type="checkbox"/>
+				<span>全选</span>
+				<span>批量删除</span>
+				<span>共<i>0</i>件</span>
+				<span>总计(不含运费) : </span>
+				<span id="zongjia">0.00</span>
+				<span id="jiesuan">结算</span>
+			</div>
+		</div>
 		<div id="need" class="margin">
 			<h3>您可能还需要</h3>
 			<div id="needHome">
@@ -80,3 +103,239 @@
 		</footer>
 	</body>
 </html>
+
+
+<script>
+	
+
+</script>
+<script>
+	//获取cookie
+	function getCookie(key){
+	
+		var str = decodeURIComponent(document.cookie);
+		
+		var arr = str.split("; ");
+	
+		for(var i=0;i<arr.length;i++){
+			if(arr[i].indexOf(key+"=")==0){
+				return arr[i].substring((key+"=").length);
+			}
+		}
+		return "";
+		}
+	//调用
+	var vipName = getCookie("userTel")
+		var obj = null;
+		//请求数据，动态创建
+		var zhongjia = 0;
+		$.get("getShoppingCart.php",{ vipName:vipName} ,function(data){
+				var obj = eval("("+data+")")				
+				if(obj !=null){
+					for(var j = 0;j<obj.length;j++){
+						//alert()
+						var goodsche=document.getElementById("goodsche")
+						var commodity = document.createElement("div")
+							commodity.className="dangeshanchu"
+							commodity.style.cssText="width: 982px;height: 155px;border: 1px solid #f2f2f2;background: #fafafa;padding: 20px 26px 0 39px ;box-sizing: border-box;margin-top: 20px;"
+						var pitchOn = document.createElement("input")
+							pitchOn.id="pitchOn"+j;
+							pitchOn.type="checkbox"
+							pitchOn.style.cssText="float: left;"
+							commodity.appendChild(pitchOn)
+						var img = document.createElement("img")
+							img.src=obj[j].goodsImg;
+							img.style.cssText="float: left;width: 70px;height: 70px;margin: 0 10px;"
+							commodity.appendChild(img)
+						var p = document.createElement("p")
+							p.innerHTML=obj[j].goodsName;
+							p.style.cssText="float: left;width: 131px;font: 12px/20px '';color: #666;"
+							commodity.appendChild(p)
+						var cl = document.createElement("div")
+							cl.style.cssText="float: left;width: 171px;height: 82px;border: 1px dashed #dbebfe;font: 12px/20px ''; color: #999;padding-left: 5px;margin: 0px 20px 0 30px;"
+							commodity.appendChild(cl)
+						var span1 = document.createElement("span")
+							span1.innerHTML="颜色 : 红"
+							cl.appendChild(span1)
+						var br = document.createElement("br")
+							cl.appendChild(br)
+						var span2 = document.createElement("span")
+							span2.innerHTML="尺码 : L"
+							cl.appendChild(span2)
+						var pr = document.createElement("div")
+							pr.style.cssText="float: left;"
+							commodity.appendChild(pr)
+						var i = document.createElement("i")
+							i.style.cssText="font: 12px/18px '';color: #666;"
+							i.innerHTML=obj[j].goodsPrice+".00";
+							pr.appendChild(i)
+						var br2 = document.createElement("br")
+							pr.appendChild(br2)
+						var b = document.createElement("b")
+							b.style.cssText="font: 12px/18px '';color: #999;text-decoration: line-through;"
+							b.innerHTML="479.00"
+							pr.appendChild(b)
+						var add = document.createElement("div")
+							add.className="valign"
+							add.style.cssText="float: left;border: 1px solid #ccc;display: inline-block;width: 102px;height: 28px;margin: 0px  49px 0 117px;"
+							commodity.appendChild(add)
+						var reduce = document.createElement("span")
+							reduce.className="valign"
+							reduce.id="reduce"
+							reduce.ord = obj[j].goodsId
+							reduce.style.cssText="float: left;font-weight: bold;display: block;width: 26px;height: 28px;"
+							reduce.innerHTML="-"
+							add.appendChild(reduce)
+						var reveal = document.createElement("span")
+							reveal.className="valign"
+							reveal.id="reveal"
+							reveal.style.cssText="float: left;font-weight: bold;display: block;width: 48px;height: 28px;border-left: 1px solid #ccc;border-right: 1px solid #ccc;text-align: center;"
+							reveal.innerHTML=obj[j].goodsCount;
+							add.appendChild(reveal)	
+						var addition = document.createElement("span")
+							addition.className="valign"
+							addition.id = "addition"
+							addition.ord = obj[j].goodsId
+							addition.style.cssText="float: left;font-weight: bold;display: block;width: 26px;height: 28px;"
+							addition.innerHTML="+"
+							add.appendChild(addition)
+						var jiage = document.createElement("span")
+							jiage.id="jiage"
+							jiage.style.cssText="float: left;color: #ff0600;font-weight: bold;display: inline-block;height: 20px;width: 70px;"
+							jiage.innerHTML=obj[j].goodsPrice*obj[j].goodsCount;
+							commodity.appendChild(jiage)
+						var de = document.createElement("div")
+							de.style.cssText="float: left;width: 64px;"
+							commodity.appendChild(de)
+						var shanchu = document.createElement("input")
+							shanchu.id="shanchu"
+							shanchu.type="button"
+							shanchu.value="删除"
+							shanchu.ord = obj[j].goodsId
+							shanchu.style.cssText="border: 0;margin-top: 5px;background: #fff;"
+							de.appendChild(shanchu)
+						var br3=document.createElement("br")
+							de.appendChild(br3)
+						var yiru = document.createElement("input")
+							yiru.value="移入收藏"
+							yiru.style.cssText="border: 0;margin-top: 5px;background: #fff;"
+							de.appendChild(yiru)		
+						goodsche.appendChild(commodity)
+					
+						//给每个删除按钮绑定点击删除事件
+						shanchu.onclick=function () {
+							//删除页面数据
+							$(this).parents(".dangeshanchu").remove()
+							
+							var goodsId = this.ord
+							//删除后台数据
+							$.get("deleteGoods.php",{ vipName:vipName,goodsId:goodsId} ,function(da){
+														
+							});
+							
+						}
+						//加减按钮
+						var num=obj[j].goodsCount
+						var danjia = obj[j].goodsPrice;
+						reduce.onclick=function(){
+								num--;
+							if(num<=1){
+								num=1;
+							}
+							//alert(danjia)
+						 	var jiage = num*danjia
+							 $("#jiage").html(jiage)
+							 //$("#zongjia2").html(jiage)
+							 $("#reveal").html(num)
+							 //修改数据库中的数据
+							 var goodsId = this.ord
+							$.get("updateGoodsCount.php",{ vipName:vipName,goodsId:goodsId,goodsCount:num} ,function(da){
+									
+							}); 
+								
+						}
+						addition.onclick=function(){
+							num++;
+							
+							//alert(danjia)
+						 	var jiage = num*danjia
+							 $("#jiage").html(jiage)
+							 //$("#zongjia2").html(jiage)
+							 $("#reveal").html(num)
+							 //修改数据库中的数据
+							 var goodsId = this.ord
+							$.get("updateGoodsCount.php",{ vipName:vipName,goodsId:goodsId,goodsCount:num} ,function(da){
+									
+							}); 
+								
+						}
+							
+					}
+									
+					//全选
+					var isChecked = true;
+					$("#checkAll").click(function(){
+						if(isChecked==true){
+						
+							for(var l=0;l<obj.length;l++){
+								$("#pitchOn"+l).attr("checked", true)
+						
+							}
+							isChecked = false;
+							$("#jiesuan").css({"background": "#e20000","color":"#fff"})
+						}else{
+							
+							for(var l=0;l<obj.length;l++){
+								$("#pitchOn"+l).attr("checked", false)
+						
+							}
+							isChecked = true;
+							$("#jiesuan").css({"background": "#ddd","color":"#999"})
+						}
+	
+					});
+					
+				}
+		});
+		
+		
+	//有商品时隐藏
+	$(function(){
+		$("#content").css({"display":"none"})
+		
+	});
+	
+	
+	
+	
+		
+		
+	//是否登录
+	$(function(){
+		var aa =  getCookie("userTel")
+		if(aa != ""){
+			$("#denglu").html("亲欢迎再次光临!")
+			$("#denglu2").html(aa)
+			
+			
+		}
+	})
+	//取cookie值
+	function getCookie(key){
+	
+	var str = decodeURIComponent(document.cookie);
+	
+	var arr = str.split("; ");
+
+	for(var i=0;i<arr.length;i++){
+		if(arr[i].indexOf(key+"=")==0){
+			return arr[i].substring((key+"=").length);
+		}
+		}
+		return "";
+	}	
+		
+		
+				
+	
+</script>
